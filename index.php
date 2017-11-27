@@ -4,7 +4,8 @@ require __DIR__ . '/vendor/autoload.php';
 use Mpociot\BotMan\BotManFactory;
 use Mpociot\BotMan\BotMan;
 use Mpociot\BotMan\Messages\Message;
-
+use Mpociot\BotMan\Facebook\ElementButton;
+use Mpociot\BotMan\Facebook\ButtonTemplate;
 
 $config = [
   'hipchat_urls' => [
@@ -32,6 +33,11 @@ $botman->verifyServices('tutorialbotfacebook-verify');
 // give the bot something to listen for.
 $botman->hears('Ciao', function (BotMan $bot) {
   $bot->reply('Ciao benvenuto in Wellnet! Come posso aiutarti?');
+  $bot->typesAndWaits(2);
+  $bot->reply(ButtonTemplate::create('Do you want to know more about BotMan?')
+    ->addButton(ElementButton::create('Tell me more')->type('postback')->payload('tellmemore'))
+    ->addButton(ElementButton::create('Show me the docs')->url('http://botman.io/'))
+  );
 });
 
 
