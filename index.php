@@ -15,9 +15,6 @@ $config = [
   ]
 ];
 
-DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
-
-
 // create an instance
 $botman = BotManFactory::create($config);
 
@@ -26,13 +23,6 @@ $botman->hears('Ciao', function (BotMan $bot) {
   $bot->reply('Ciao benvenuto in Wellnet! Come posso aiutarti?');
 });
 
-$botman->hears('button', function (BotMan $bot) {
-  $bot->typesAndWaits(2);
-  $bot->reply(ButtonTemplate::create('Do you want to know more about BotMan?')
-    ->addButton(ElementButton::create('Tell me more')->type('postback')->payload('tellmemore'))
-    ->addButton(ElementButton::create('Show me the docs')->url('http://botman.io/'))
-  );
-});
 
 
 $botman->listen();
