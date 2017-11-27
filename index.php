@@ -1,6 +1,7 @@
 <?php
-echo "Read file";
 require __DIR__ . '/vendor/autoload.php';
+
+echo "after vendor file";
 
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\BotManFactory;
