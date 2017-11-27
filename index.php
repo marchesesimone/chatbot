@@ -32,32 +32,12 @@ $botman->verifyServices('tutorialbotfacebook-verify');
 
 // give the bot something to listen for.
 $botman->hears('Ciao', function (BotMan $bot) {
-  $bot->reply('Ciao benvenuto in Wellnet! Come posso aiutarti?');
-  $bot->typesAndWaits(2);
-  $bot->reply(GenericTemplate::create()
-    ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
-    ->addElements([
-      Element::create('Vuoi sapere dove ci troviamo?')
-        ->subtitle('Wellnet a Milano')
-        ->image('http://botman.io/img/botman-body.png')
-        ->addButton(ElementButton::create('visit')->url('https://wellnet.it'))
-        ->addButton(ElementButton::create('tell me more')
-          ->payload('tellmemore')->type('postback')),
-      Element::create('Vuoi parlare con l’amministrazione?')
-        ->subtitle('Chiamaci')
-        ->image('http://botman.io/img/botman-body.png')
-        ->addButton(ElementButton::create('visit')
-          ->url('https://github.com/mpociot/botman-laravel-starter')
-        ),
-      Element::create('Hai bisogno di un preventivo?')
-        ->subtitle('Descrivi il tuo progetto')
-        ->image('http://botman.io/img/botman-body.png')
-        ->addButton(ElementButton::create('Richiedi')
-          ->url('https://wellnet.it/contatti')
-        )
-    ])
-
-
+  //$bot->typesAndWaits(2);
+  $bot->reply(ButtonTemplate::create('Ciao benvenuto in Wellnet! Come posso aiutarti?')
+    ->typesAndWaits(2)
+    ->addButton(ElementButton::create('Vuoi conoscerci?')->url('https://www.wellnet.it/'))
+    ->addButton(ElementButton::create('Show me the docs')->type('postback')->payload('tellmemore'))
+    ->addButton(ElementButton::create('Hai bisogno di un preventivo?')->url('https://www.wellnet.it/contatti'))
   );
 });
 
