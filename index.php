@@ -1,10 +1,10 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-use BotMan\BotMan\BotMan;
-use BotMan\BotMan\BotManFactory;
-use BotMan\BotMan\Drivers\DriverManager;
-use BotMan\BotMan\Messages\Outgoing\Actions\Button;
+use Mpociot\BotMan\BotManFactory;
+use Mpociot\BotMan\BotMan;
+use Mpociot\BotMan\Messages\Message;
+
 
 $config = [
   // Your driver-specific configuration
