@@ -13,6 +13,9 @@ $config = [
   'facebook_app_secret' => '8dbc5620f7bb9c4e3c6ccb7bd51f30b8',
 ];
 
+DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
+
+
 // create an instance
 $botman = BotManFactory::create($config);
 
