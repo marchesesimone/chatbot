@@ -4,6 +4,7 @@ require __DIR__ . '/vendor/autoload.php';
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\BotManFactory;
 use BotMan\BotMan\Drivers\DriverManager;
+use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 
 $config = [
   // Your driver-specific configuration
@@ -22,10 +23,16 @@ $botman = BotManFactory::create($config);
 
 // give the bot something to listen for.
 $botman->hears('Ciao', function (BotMan $bot) {
-  $bot->reply('Hello yourself.');
-
+  $bot->reply('Ciao benvenuto in Wellnet! Come posso aiutarti?');
 });
 
+$botman->hears('button', function (BotMan $bot) {
+  $bot->typesAndWaits(2);
+  $bot->reply(ButtonTemplate::create('Do you want to know more about BotMan?')
+    ->addButton(ElementButton::create('Tell me more')->type('postback')->payload('tellmemore'))
+    ->addButton(ElementButton::create('Show me the docs')->url('http://botman.io/'))
+  );
+});
 
 
 $botman->listen();
