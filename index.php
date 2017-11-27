@@ -23,9 +23,9 @@ DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
 // create an instance
 $botman = BotManFactory::create($config);
 
-// In your BotMan controller
-//$botman->verifyServices('tutorialbotfacebook-verify');
+// give the bot something to listen for.
+$botman->hears('hello', function (BotMan $bot) {
+  $bot->reply('Hello yourself.');
+});
 
-
-$botman->hears('foo', function($bot){});
 $botman->listen();
