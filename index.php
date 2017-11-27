@@ -6,6 +6,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\BotManFactory;
+use BotMan\BotMan\Drivers\DriverManager;
 
 $config = [
   // Your driver-specific configuration
