@@ -22,10 +22,22 @@ $botman = BotManFactory::create($config);
 
 // give the bot something to listen for.
 $botman->hears('Ciao', function (BotMan $bot) {
-  $bot->reply(ButtonTemplate::create('Ciao Benvenuto in Wellnet! Come posso aiutarti?')
-    ->addButton(ElementButton::create('Vuoi sapere dove ci troviamo?')->url('https://www.wellnet.it/contatti'))
-    ->addButton(ElementButton::create('Vuoi parlare con l’amministrazione?')->url('http://botman.io/'))
-    ->addButton(ElementButton::create('Hai bisogno di un preventivo?')->url('https://www.wellnet.it/contatti'))
+  $bot->reply(GenericTemplate::create()
+    ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
+    ->addElements([
+      Element::create('BotMan Documentation')
+        ->subtitle('All about BotMan')
+        ->image('http://botman.io/img/botman-body.png')
+        ->addButton(ElementButton::create('visit')->url('http://botman.io'))
+        ->addButton(ElementButton::create('tell me more')
+          ->payload('tellmemore')->type('postback')),
+      Element::create('BotMan Laravel Starter')
+        ->subtitle('This is the best way to start with Laravel and BotMan')
+        ->image('http://botman.io/img/botman-body.png')
+        ->addButton(ElementButton::create('visit')
+          ->url('https://github.com/mpociot/botman-laravel-starter')
+        )
+    ])
   );
 });
 
