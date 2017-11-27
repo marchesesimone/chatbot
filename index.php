@@ -22,7 +22,6 @@ $botman = BotManFactory::create($config);
 
 // give the bot something to listen for.
 $botman->hears('Ciao', function (BotMan $bot) {
-  $bot->reply('Ciao Benvenuto in Wellnet!');
   $bot->reply(ButtonTemplate::create('Ciao Benvenuto in Wellnet! Come posso aiutarti?')
     ->addButton(ElementButton::create('Vuoi sapere dove ci troviamo?')->url('https://www.wellnet.it/contatti'))
     ->addButton(ElementButton::create('Vuoi parlare con l’amministrazione?')->url('http://botman.io/'))
