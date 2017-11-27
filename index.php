@@ -22,7 +22,7 @@ $botman = BotManFactory::create($config);
 
 // give the bot something to listen for.
 $botman->hears('Ciao', function (BotMan $bot) {
-  $bot->reply(GenericTemplate::create()
+  $botman->reply(GenericTemplate::create()
     ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
     ->addElements([
       Element::create('BotMan Documentation')
