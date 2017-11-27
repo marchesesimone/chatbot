@@ -34,12 +34,14 @@ $botman->verifyServices('tutorialbotfacebook-verify');
 $botman->hears('Ciao', function (BotMan $bot) {
   $bot->typesAndWaits(2);
   $bot->reply(ButtonTemplate::create('Ciao benvenuto in Wellnet! Come posso aiutarti?')
-    ->addButton(ElementButton::create('Vuoi conoscerci?')->url('https://www.wellnet.it/'))
-    ->addButton(ElementButton::create('Show me the docs')->type('postback')->payload('tellmemore'))
+    ->addButton(ElementButton::create('Vuoi sapere dove ci troviamo?')->url('https://www.google.it/maps/place/Wellnet+S.r.l./@45.467766,9.173752,17z/data=!3m1!4b1!4m5!3m4!1s0x4786c151cfb6560f:0x529a891fd0d58a8c!8m2!3d45.4677623!4d9.175946'))
+    ->addButton(ElementButton::create('Vuoi parlare con l’amministrazione?')->type('postback')->payload('tellmemore'))
     ->addButton(ElementButton::create('Hai bisogno di un preventivo?')->url('https://www.wellnet.it/contatti'))
   );
 });
 
-
+$botman->hears('Vuoi parlare con l’amministrazione? {$name} ', function (BotMan $bot, $name) {
+ $bot->reply('Your name is: ' . $name);
+});
 
 $botman->listen();
