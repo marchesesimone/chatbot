@@ -38,19 +38,19 @@ $botman->hears('Ciao', function (BotMan $bot) {
     ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
     ->addElements([
       Element::create('Vuoi sapere dove ci troviamo?')
+        ->subtitle('Wellnet a Milano')
 
-        ->addButton(ElementButton::create('visit')->url('https://www.wellnet.it/contatti'))
+        ->addButton(ElementButton::create('visit')->url('https://wellnet.it'))
         ->addButton(ElementButton::create('tell me more')
           ->payload('tellmemore')->type('postback')),
       Element::create('Vuoi parlare con l’amministrazione?')
         ->addButton(ElementButton::create('visit')
-          ->payload('tellmemore')->type('postback')),
-        )
-      Element::create('Hai bisogno di un preventivo?')
-        ->subtitle('Parlaci del tuo progetto e ti manderemo un preventivo')
-
-        ->addButton(ElementButton::create('visit')
-          ->url('https://www.wellnet.it/contatti')
+          ->url('https://github.com/mpociot/botman-laravel-starter')
+        ),
+      Element::create(' Hai bisogno di un preventivo?')
+        ->subtitle('Descrivi il tuo progetto')
+        ->addButton(ElementButton::create('Richiedi')
+          ->url('https://wellnet.it/contatti')
         )
     ])
 
