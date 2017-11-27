@@ -32,9 +32,8 @@ $botman->verifyServices('tutorialbotfacebook-verify');
 
 // give the bot something to listen for.
 $botman->hears('Ciao', function (BotMan $bot) {
-  //$bot->typesAndWaits(2);
+  $bot->typesAndWaits(2);
   $bot->reply(ButtonTemplate::create('Ciao benvenuto in Wellnet! Come posso aiutarti?')
-    ->typesAndWaits(2)
     ->addButton(ElementButton::create('Vuoi conoscerci?')->url('https://www.wellnet.it/'))
     ->addButton(ElementButton::create('Show me the docs')->type('postback')->payload('tellmemore'))
     ->addButton(ElementButton::create('Hai bisogno di un preventivo?')->url('https://www.wellnet.it/contatti'))
