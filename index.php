@@ -34,9 +34,27 @@ $botman->verifyServices('tutorialbotfacebook-verify');
 $botman->hears('Ciao', function (BotMan $bot) {
   $bot->reply('Ciao benvenuto in Wellnet! Come posso aiutarti?');
   $bot->typesAndWaits(2);
-  $bot->reply(ButtonTemplate::create('Do you want to know more about BotMan?')
-    ->addButton(ElementButton::create('Tell me more')->type('postback')->payload('tellmemore'))
-    ->addButton(ElementButton::create('Show me the docs')->url('http://botman.io/'))
+  $bot->reply(GenericTemplate::create()
+    ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
+    ->addElements([
+      Element::create('Vuoi sapere dove ci troviamo?')
+
+        ->addButton(ElementButton::create('visit')->url('https://www.wellnet.it/contatti'))
+        ->addButton(ElementButton::create('tell me more')
+          ->payload('tellmemore')->type('postback')),
+      Element::create('Vuoi parlare con l’amministrazione?')
+        ->addButton(ElementButton::create('visit')
+          ->payload('tellmemore')->type('postback')),
+        )
+      Element::create('Hai bisogno di un preventivo?')
+        ->subtitle('Parlaci del tuo progetto e ti manderemo un preventivo')
+
+        ->addButton(ElementButton::create('visit')
+          ->url('https://www.wellnet.it/contatti')
+        )
+    ])
+
+
   );
 });
 
