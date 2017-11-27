@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
 
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\BotManFactory;
@@ -8,7 +9,7 @@ $config = [
   'facebook' => [
     'token' => 'EAAHCF500w5sBABBluOef4LXVNv7oFWmnQxawj8tbyENo1ZC5XL8tTGqTEgHkQndHDXQfn9OaiVgXjzmx5fEHZBy9YqhLB47esFYUJACkEtgjCPEAd7x7qkHAU0NjT1IRmT6MviLMpQnFqhzZCOl1OuuXB76wzp0rgQt9QiNZAwZDZD',
     'app_secret' => '8dbc5620f7bb9c4e3c6ccb7bd51f30b8',
-    'verification'=>'MY_SECRET_VERIFICATION_TOKEN',
+    'verification'=>'tutorialbotfacebook-verify',
   ]
 ];
 
