@@ -14,7 +14,7 @@ $config = [
 $botman = BotManFactory::create($config);
 
 // In your BotMan controller
-$botman->verifyServices('tutorialbotfacebook-verify');
+//$botman->verifyServices('tutorialbotfacebook-verify');
 
 
 $botman->hears('foo', function($bot){});
