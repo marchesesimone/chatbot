@@ -27,9 +27,5 @@ $botman->hears('Ciao', function (BotMan $bot) {
 });
 
 
-$bot->reply(ButtonTemplate::create('Do you want to know more about BotMan?')
-  ->addButton(ElementButton::create('Tell me more')->type('postback')->payload('tellmemore'))
-  ->addButton(ElementButton::create('Show me the docs')->url('http://botman.io/'))
-);
 
 $botman->listen();
