@@ -44,7 +44,7 @@ $botman->hears('Hi', function (BotMan $bot) {
 
 // give the bot something to listen for.
 $botman->hears('algolia', function (BotMan $bot) {
-  $bot->reply(Config::ALGOLIA_APP_ID);
+  $bot->reply('APPID ' . Config::ALGOLIA_APP_ID);
 });
 
 $botman->listen();
