@@ -29,4 +29,24 @@ $botman->hears('Hi', function (BotMan $bot) {
   );
 });
 
+
+// give the bot something to listen for.
+$botman->hears('customer', function (BotMan $bot) {
+  $index = $client->initIndex(Config::ALGOLIA_INDEX);
+
+  $bot->reply(ButtonTemplate::create('Per quale customer vuoi cercare?');
+  $bot->raply($answer->getText());
+  /*// without search parameters
+  $res = $index->search('query string');
+
+  // with search parameters
+  $res = $index->search('query string', [
+    'attributesToRetrieve' => [
+      'firstname',
+      'lastname',
+    ],
+    'hitsPerPage' => 50
+  ]);*/
+});
+
 $botman->listen();
