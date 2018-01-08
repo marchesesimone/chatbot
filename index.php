@@ -26,6 +26,7 @@ $config = [
   'wechat_app_key' => 'YOUR-WECHAT-APP-KEY',
 ];
 
+
 // create an instance
 $botman = BotManFactory::create($config);
 
@@ -40,7 +41,6 @@ $botman->hears('Hi', function (BotMan $bot) {
     ->addButton(ElementButton::create('Want a quote?')->url('https://www.wellnet.it/contatti'))
   );
 });
-
 
 // give the bot something to listen for.
 $botman->hears('algolia', function (BotMan $bot) {
