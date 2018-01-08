@@ -7,8 +7,8 @@ class AutoLoader {
   }
 
   function load( $file ) {
-    if (is_file($this->path . '/' . $file . '.php')) {
-      require_once( $this->path . '/' . $file . '.php' );
+    if (is_file($this->path . '/' . $file . '.class.php')) {
+      require_once( $this->path . '/' . $file . '.class.php' );
     }
   }
 }

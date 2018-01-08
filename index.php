@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '/classes/Config.php';
+require __DIR__ . '/classes/basic.php';
 
 use Mpociot\BotMan\BotManFactory;
 use Mpociot\BotMan\BotMan;
@@ -40,11 +40,6 @@ $botman->hears('Hi', function (BotMan $bot) {
     ->addButton(ElementButton::create('Contact')->url('https://www.wellnet.it/contatti'))
     ->addButton(ElementButton::create('Want a quote?')->url('https://www.wellnet.it/contatti'))
   );
-});
-
-// give the bot something to listen for.
-$botman->hears('algolia', function (BotMan $bot) {
-  $bot->reply('APPID ' . Config::ALGOLIA_APP_ID);
 });
 
 $botman->listen();
