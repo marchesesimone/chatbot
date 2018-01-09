@@ -13,6 +13,8 @@ $config = [
   'facebook_app_secret' => Config::FACEBOOK_APP_SECRET,
 ];
 
+$client = new \AlgoliaSearch\Client(Config::ALGOLIA_APP_ID,Config::ALGOLIA_SECRET);
+$index = $client->initIndex(Config::ALGOLIA_INDEX);
 
 // create an instance
 $botman = BotManFactory::create($config);
@@ -32,12 +34,13 @@ $botman->hears('Hi', function (BotMan $bot) {
 
 // give the bot something to listen for.
 $botman->hears('customer', function (BotMan $bot) {
-  $index = $client->initIndex(Config::ALGOLIA_INDEX);
 
-  $bot->reply(ButtonTemplate::create('Per quale customer vuoi cercare?');
+  $bot->reply(ButtonTemplate::create('Per quale customer vuoi cercare?'));
+  $bot->typesAndWaits(2);
   $bot->raply($answer->getText());
-  /*// without search parameters
-  $res = $index->search('query string');
+
+  // without search parameters
+  /*$res = $index->search('query string');
 
   // with search parameters
   $res = $index->search('query string', [
