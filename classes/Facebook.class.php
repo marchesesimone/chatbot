@@ -1,4 +1,6 @@
 <?php
+use Mpociot\BotMan\BotMan;
+
 class OnboardingConversation extends Conversation
 {
   protected $firstname;
