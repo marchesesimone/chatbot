@@ -35,8 +35,7 @@ $botman->hears('Hi', function (BotMan $bot) {
 // give the bot something to listen for.
 $botman->hears('customer', function (BotMan $bot) {
 
-  $bot->reply(ButtonTemplate::create('Per quale customer vuoi cercare?'));
-  $bot->typesAndWaits(2);
+  $bot->ask(\BotMan\BotMan\Messages\Outgoing\Question::create('Per quale customer vuoi cercare?'));
   $bot->raply($answer->getText());
 
   // without search parameters
