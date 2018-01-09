@@ -31,23 +31,8 @@ $botman->hears('Hi', function (BotMan $bot) {
   );
 });
 
-
-// give the bot something to listen for.
-$botman->hears('customer', function (BotMan $bot) {
-
+$botman->hears('customer', function($bot) {
   $bot->startConversation(new OnboardingConversation);
-
-  // without search parameters
-  /*$res = $index->search('query string');
-
-  // with search parameters
-  $res = $index->search('query string', [
-    'attributesToRetrieve' => [
-      'firstname',
-      'lastname',
-    ],
-    'hitsPerPage' => 50
-  ]);*/
 });
 
 $botman->listen();

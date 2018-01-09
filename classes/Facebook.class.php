@@ -34,3 +34,5 @@ class OnboardingConversation extends Conversation
     $this->askFirstname();
   }
 }
+
+echo 'Class Facebook loaded';
