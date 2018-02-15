@@ -2,20 +2,17 @@
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/classes/basic.php';
 
-use Mpociot\BotMan\BotManFactory;
-use Mpociot\BotMan\BotMan;
 use Mpociot\BotMan\Messages\Message;
 use Mpociot\BotMan\Facebook\ElementButton;
 use Mpociot\BotMan\Facebook\ButtonTemplate;
 use Mpociot\BotMan\Traits;
+use BotMan\BotMan\BotMan;
+use BotMan\BotMan\BotManFactory;
 
 $config = [
   'facebook_token' => Config::FACEBOOK_TOKEN,
   'facebook_app_secret' => Config::FACEBOOK_APP_SECRET,
 ];
-
-$client = new \AlgoliaSearch\Client(Config::ALGOLIA_APP_ID,Config::ALGOLIA_SECRET);
-$index = $client->initIndex(Config::ALGOLIA_INDEX);
 
 // create an instance
 $botman = BotManFactory::create($config);
@@ -32,4 +29,7 @@ $botman->hears('Hi', function (BotMan $bot) {
   );
 });
 
+$botman->hears('test', function (BotMan $bot) {
+  $bot->reply('provau');
+});
 $botman->listen();
