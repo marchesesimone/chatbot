@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/classes/basic.php';
-
+/*
 use Mpociot\BotMan\BotManFactory;
 use Mpociot\BotMan\BotMan;
 use Mpociot\BotMan\Messages\Message;
@@ -37,6 +37,9 @@ $botman->hears('Hello', function($bot) {
   $bot->startConversation(new OnboardingConversation);
 });
 
-$conv = new OnboardingConversation();
+
 
 $botman->listen();
+*/
+
+$conv = new OnboardingConversation();

@@ -9,6 +9,7 @@ class OnboardingConversation extends Conversation {
   public function __construct() {
     print 'Read';
   }
+
   /*
     public function askFirstname()
     {
@@ -30,12 +31,10 @@ class OnboardingConversation extends Conversation {
         $this->say('Great - that is all we need, '.$this->firstname);
       });
     }
-  */
-  /**
-   *
-   */
+
+
   public function run() {
     // This will be called immediately
     $this->say('Nice to meet you ');
-  }
+  }*/
 }
