@@ -33,4 +33,8 @@ $botman->hears('test', function (BotMan $bot) {
   $bot->reply('OK');
 });
 
+$botman->hears('Hello', function($bot) {
+  $bot->startConversation(new OnboardingConversation);
+});
+
 $botman->listen();

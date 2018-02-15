@@ -1,5 +1,6 @@
 <?php
 use Mpociot\BotMan\BotMan;
+use Mpociot\BotMan\Conversations;
 
 class OnboardingConversation extends Conversation
 {
@@ -7,6 +8,10 @@ class OnboardingConversation extends Conversation
 
   protected $email;
 
+  public function __construct() {
+    print 'Start conversation';
+  }
+/*
   public function askFirstname()
   {
     $this->ask('Hello! What is your firstname?', function(Answer $answer) {
@@ -32,5 +37,5 @@ class OnboardingConversation extends Conversation
   {
     // This will be called immediately
     $this->askFirstname();
-  }
+  }*/
 }
