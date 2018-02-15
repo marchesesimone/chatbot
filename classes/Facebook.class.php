@@ -8,9 +8,6 @@ class OnboardingConversation extends Conversation
 
   protected $email;
 
-  public function __construct() {
-    $this->say('Nice to meet you ');
-  }
 /*
   public function askFirstname()
   {
@@ -32,10 +29,12 @@ class OnboardingConversation extends Conversation
       $this->say('Great - that is all we need, '.$this->firstname);
     });
   }
-
-  public function run()
-  {
+*/
+  /**
+   * 
+   */
+  public function run() {
     // This will be called immediately
-    $this->askFirstname();
-  }*/
+    $this->say('Nice to meet you ');
+  }
 }
