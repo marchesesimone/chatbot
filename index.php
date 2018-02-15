@@ -32,5 +32,4 @@ $botman->hears('Hi', function (BotMan $bot) {
   );
 });
 
-$botman->startConversation(new OnboardingConversation);
 $botman->listen();
