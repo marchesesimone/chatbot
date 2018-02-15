@@ -2,12 +2,12 @@
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/classes/basic.php';
 
+use Mpociot\BotMan\BotManFactory;
+use Mpociot\BotMan\BotMan;
 use Mpociot\BotMan\Messages\Message;
 use Mpociot\BotMan\Facebook\ElementButton;
 use Mpociot\BotMan\Facebook\ButtonTemplate;
 use Mpociot\BotMan\Traits;
-use BotMan\BotMan\BotMan;
-use BotMan\BotMan\BotManFactory;
 
 $config = [
   'facebook_token' => Config::FACEBOOK_TOKEN,
@@ -30,6 +30,7 @@ $botman->hears('Hi', function (BotMan $bot) {
 });
 
 $botman->hears('test', function (BotMan $bot) {
-  $bot->reply('provau');
+  $bot->reply('OK');
 });
+
 $botman->listen();
