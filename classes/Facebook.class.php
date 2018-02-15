@@ -9,7 +9,7 @@ class OnboardingConversation extends Conversation
   protected $email;
 
   public function __construct() {
-    print 'Start conversation';
+    $this->say('Nice to meet you ');
   }
 /*
   public function askFirstname()
