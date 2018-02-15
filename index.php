@@ -37,4 +37,6 @@ $botman->hears('Hello', function($bot) {
   $bot->startConversation(new OnboardingConversation);
 });
 
+$conv = new OnboardingConversation();
+
 $botman->listen();
