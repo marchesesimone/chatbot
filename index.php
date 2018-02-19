@@ -6,20 +6,11 @@ error_reporting(E_ALL);
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/classes/basic.php';
 
-
-
 use Mpociot\BotMan\BotManFactory;
 use Mpociot\BotMan\BotMan;
-use Mpociot\BotMan\Messages\Message;
+use Mpociot\BotMan\Messages;
 use Mpociot\BotMan\Facebook\ElementButton;
 use Mpociot\BotMan\Facebook\ButtonTemplate;
-
-use Mpociot\BotMan\BotMan;
-use Mpociot\BotMan\Message;
-use Mpociot\BotMan\Conversation;
-use Mpociot\BotMan\BotManFactory;
-
-
 
 
 $config = [
