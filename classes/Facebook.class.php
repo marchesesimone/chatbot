@@ -1,9 +1,11 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 
+
 use Mpociot\BotMan\Conversations\InlineConversation;
 use Mpociot\BotMan\Answer;
 use Mpociot\BotMan\Question;
+use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 
 /**
  * Class Facebook
