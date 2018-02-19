@@ -66,6 +66,7 @@ class Facebook extends InlineConversation {
         $selectedValue = $answer->getValue(); // will be either 'yes' or 'no'
         $selectedText = $answer->getText(); // will be either 'Of course' or 'Hell no!'
       }
+      $this->say('Reply '.$answer->getText());
     });
   }
 }
