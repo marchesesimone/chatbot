@@ -44,7 +44,7 @@ class Facebook extends InlineConversation {
 
   public function run() {
     // This will be called immediately
-    $this->askFirstname();
+    $this->askForDatabase();
   }
 
   // ...inside the conversation object...
