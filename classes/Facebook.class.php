@@ -30,7 +30,6 @@ class Facebook extends InlineConversation {
 
       $this->say('Nice to meet you ' . $this->firstname);
       $this->askEmail();
-      $this->bot->startConversation(new FavouriteLunchConversation());
     });
   }
 
