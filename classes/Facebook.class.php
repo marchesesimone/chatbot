@@ -6,7 +6,7 @@ use Mpociot\BotMan\Conversations\InlineConversation;
 use Mpociot\BotMan\Answer;
 use Mpociot\BotMan\Question;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
-
+use BotMan\BotMan\Cache\CodeIgniterCache;
 /**
  * Class Facebook
  */
@@ -27,6 +27,7 @@ class Facebook extends InlineConversation {
    */
   public function askFirstname() {
     $this->ask('Hello! What is your firstname?', function(Answer $answer) {
+      $this->ask(print_r($answer));
       // Save result
       $this->firstname = $answer->getText();
 

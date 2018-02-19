@@ -6,13 +6,11 @@ use Mpociot\BotMan\BotManFactory;
 use Mpociot\BotMan\BotMan;
 use Mpociot\BotMan\Facebook\ElementButton;
 use Mpociot\BotMan\Facebook\ButtonTemplate;
+use Mpociot\BotMan\DriverManager;
 
 $config = [
   'facebook_token' => Config::FACEBOOK_TOKEN,
   'facebook_app_secret' => Config::FACEBOOK_APP_SECRET,
-  'telegram' => [
-    'token' => '402739879:AAG4ZMzaPyku7xEFrE8y9FHftF7iziO_ARk'
-  ]
 ];
 
 // create an instance
