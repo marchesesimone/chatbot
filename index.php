@@ -4,7 +4,6 @@ require __DIR__ . '/classes/basic.php';
 
 use Mpociot\BotMan\BotManFactory;
 use Mpociot\BotMan\BotMan;
-use Mpociot\BotMan\Message;
 use Mpociot\BotMan\Facebook\ElementButton;
 use Mpociot\BotMan\Facebook\ButtonTemplate;
 
