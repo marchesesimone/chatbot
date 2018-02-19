@@ -1,40 +1,37 @@
 <?php
-use Mpociot\BotMan\BotMan;
-use Mpociot\BotMan\Conversations;
+require __DIR__ . '/../vendor/autoload.php';
 
-class OnboardingConversation extends Conversation {
+use Mpociot\BotMan;
+use Mpociot\BotMan\Conversations\InlineConversation;
+use Mpociot\BotMan\Answer;
+
+class Facebook extends InlineConversation {
+
   protected $firstname;
 
   protected $email;
-  public function __construct() {
-    print 'Read';
+
+  public function askFirstname() {
+    $this->ask('Hello! What is your firstname?', function(Answer $answer) {
+      // Save result
+      $this->firstname = $answer->getText();
+
+      $this->say('Nice to meet you '.$this->firstname);
+      $this->askEmail();
+    });
   }
 
-  /*
-    public function askFirstname()
-    {
-      $this->ask('Hello! What is your firstname?', function(Answer $answer) {
-        // Save result
-        $this->firstname = $answer->getText();
+  public function askEmail() {
+    $this->ask('One more thing - what is your email?', function(Answer $answer) {
+      // Save result
+      $this->email = $answer->getText();
 
-        $this->say('Nice to meet you '.$this->firstname);
-        $this->askEmail();
-      });
-    }
-
-    public function askEmail()
-    {
-      $this->ask('One more thing - what is your email?', function(Answer $answer) {
-        // Save result
-        $this->email = $answer->getText();
-
-        $this->say('Great - that is all we need, '.$this->firstname);
-      });
-    }
-
+      $this->say('Great - that is all we need, '.$this->firstname);
+    });
+  }
 
   public function run() {
     // This will be called immediately
-    $this->say('Nice to meet you ');
-  }*/
+    $this->askFirstname();
+  }
 }

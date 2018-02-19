@@ -1,13 +1,26 @@
 <?php
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+error_reporting(E_ALL);
+
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/classes/basic.php';
-/*
+
+
+
 use Mpociot\BotMan\BotManFactory;
 use Mpociot\BotMan\BotMan;
 use Mpociot\BotMan\Messages\Message;
 use Mpociot\BotMan\Facebook\ElementButton;
 use Mpociot\BotMan\Facebook\ButtonTemplate;
-use Mpociot\BotMan\Traits;
+
+use Mpociot\BotMan\BotMan;
+use Mpociot\BotMan\Message;
+use Mpociot\BotMan\Conversation;
+use Mpociot\BotMan\BotManFactory;
+
+
+
 
 $config = [
   'facebook_token' => Config::FACEBOOK_TOKEN,
@@ -34,12 +47,9 @@ $botman->hears('test', function (BotMan $bot) {
 });
 
 $botman->hears('Hello', function($bot) {
-  $bot->startConversation(new OnboardingConversation);
+  $bot->startConversation(new Facebook());
 });
 
 
 
 $botman->listen();
-*/
-
-$conv = new OnboardingConversation();
