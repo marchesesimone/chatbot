@@ -1,9 +1,9 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 
-use Mpociot\BotMan;
 use Mpociot\BotMan\Conversations\InlineConversation;
 use Mpociot\BotMan\Answer;
+use Mpociot\BotMan\Question;
 
 class Facebook extends InlineConversation {
 
@@ -16,7 +16,7 @@ class Facebook extends InlineConversation {
       // Save result
       $this->firstname = $answer->getText();
 
-      $this->say('Nice to meet you '.$this->firstname);
+      $this->say('Nice to meet you ' . $this->firstname);
       $this->askEmail();
     });
   }

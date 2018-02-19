@@ -1,17 +1,13 @@
 <?php
-ini_set('display_errors', 0);
-ini_set('display_startup_errors', 0);
-error_reporting(E_ALL);
-
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/classes/basic.php';
 
 use Mpociot\BotMan\BotManFactory;
 use Mpociot\BotMan\BotMan;
-use Mpociot\BotMan\Messages;
+use Mpociot\BotMan\Message;
 use Mpociot\BotMan\Facebook\ElementButton;
 use Mpociot\BotMan\Facebook\ButtonTemplate;
-
+use BotMan\BotMan\Messages\Conversations\Conversation;
 
 $config = [
   'facebook_token' => Config::FACEBOOK_TOKEN,
