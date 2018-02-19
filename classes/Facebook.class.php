@@ -5,12 +5,24 @@ use Mpociot\BotMan\Conversations\InlineConversation;
 use Mpociot\BotMan\Answer;
 use Mpociot\BotMan\Question;
 
+/**
+ * Class Facebook
+ */
 class Facebook extends InlineConversation {
 
+  /**
+   * @var
+   */
   protected $firstname;
 
+  /**
+   * @var
+   */
   protected $email;
 
+  /**
+   *
+   */
   public function askFirstname() {
     $this->ask('Hello! What is your firstname?', function(Answer $answer) {
       // Save result
@@ -18,6 +30,7 @@ class Facebook extends InlineConversation {
 
       $this->say('Nice to meet you ' . $this->firstname);
       $this->askEmail();
+      $this->bot->startConversation(new FavouriteLunchConversation());
     });
   }
 

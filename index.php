@@ -7,7 +7,6 @@ use Mpociot\BotMan\BotMan;
 use Mpociot\BotMan\Message;
 use Mpociot\BotMan\Facebook\ElementButton;
 use Mpociot\BotMan\Facebook\ButtonTemplate;
-use BotMan\BotMan\Messages\Conversations\Conversation;
 
 $config = [
   'facebook_token' => Config::FACEBOOK_TOKEN,
@@ -29,14 +28,8 @@ $botman->hears('Hi', function (BotMan $bot) {
   );
 });
 
-$botman->hears('test', function (BotMan $bot) {
-  $bot->reply('OK');
-});
-
-$botman->hears('Hello', function($bot) {
+$botman->hears('Hello', function(BotMan $bot) {
   $bot->startConversation(new Facebook());
 });
-
-
 
 $botman->listen();
