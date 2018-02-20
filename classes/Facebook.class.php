@@ -4,14 +4,14 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use Mpociot\BotMan\BotMan;
 use Mpociot\BotMan\BotManFactory;
-use Mpociot\BotMan\Conversations\InlineConversation;
+use Mpociot\BotMan\Conversation;
 use Mpociot\BotMan\Answer;
 use Mpociot\BotMan\Question;
 
 /**
  * Class Facebook
  */
-class Facebook extends InlineConversation {
+class Facebook extends Conversation {
 
   /**
    * @var
