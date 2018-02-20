@@ -1,9 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/classes/basic.php';
 
@@ -14,6 +10,7 @@ use Mpociot\BotMan\Facebook\ButtonTemplate;
 use Mpociot\BotMan\DriverManager;
 use Mpociot\BotMan\Cache\DoctrineCache;
 use Doctrine\Common\Cache\FilesystemCache;
+use ConfigApp\Config;
 
 $config = [
   'facebook_token' => Config::FACEBOOK_TOKEN,
