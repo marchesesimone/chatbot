@@ -21,7 +21,6 @@ $config = [
 ];
 
 // create an instance
-DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
 $doctrineCacheDriver = new FilesystemCache(__DIR__);
 $botman = BotManFactory::create($config, new DoctrineCache($doctrineCacheDriver));
 
