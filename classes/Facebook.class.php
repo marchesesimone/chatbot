@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+//require __DIR__ . '/../vendor/autoload.php';
 
 use Mpociot\BotMan\Conversation;
 use Mpociot\BotMan\Answer;
@@ -26,10 +26,10 @@ class Facebook extends Conversation {
   protected $db;
 
   public function __construct() {
-    $con = new DB();
+   /* $con = new DB();
     $db = $con::getInstance();
     $db->getConnection();
-    $this->db = $db;
+    $this->db = $db;*/
   }
 
   /**
@@ -61,7 +61,7 @@ class Facebook extends Conversation {
         "email" =>  $this->email,
       );
 
-      $this->db->insert('user', $userValue, FALSE);
+//      $this->db->insert('user', $userValue, FALSE);
     });
   }
 
