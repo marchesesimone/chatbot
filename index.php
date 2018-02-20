@@ -20,7 +20,7 @@ $config = [
   'facebook_app_secret' => Config::FACEBOOK_APP_SECRET,
 ];
 
-// create an instance
+// create an instance and settings cache for conversation system
 $doctrineCacheDriver = new FilesystemCache(__DIR__);
 $botman = BotManFactory::create($config, new DoctrineCache($doctrineCacheDriver));
 
