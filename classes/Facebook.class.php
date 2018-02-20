@@ -56,12 +56,18 @@ class Facebook extends Conversation {
 
       $this->say('Great - that is all we need, '.$this->firstname);
 
+
+
+      $con = new DB();
+      $con::getInstance();
+      $con->getConnection();
+
       $userValue = array(
         "name"  =>  $this->firstname,
         "email" =>  $this->email,
       );
-
-//      $this->db->insert('user', $userValue, FALSE);
+      
+      $con->insert('user', $userValue, FALSE);
     });
   }
 
