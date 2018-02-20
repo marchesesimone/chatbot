@@ -25,13 +25,6 @@ class Facebook extends Conversation {
 
   protected $db;
 
-  public function __construct() {
-   /* $con = new DB();
-    $db = $con::getInstance();
-    $db->getConnection();
-    $this->db = $db;*/
-  }
-
   /**
    * Richiedo il nome all'utente e lo salvo
    */
@@ -54,20 +47,21 @@ class Facebook extends Conversation {
       // Save result
       $this->email = $answer->getText();
 
-      $this->say('Great - that is all we need, '.$this->firstname);
-
-
-
       $con = new DB();
-      $con::getInstance();
-      $con->getConnection();
+      //$con::getInstance();
+      //$con->getConnection();
 
       $userValue = array(
+        "id"    => NULL,
         "name"  =>  $this->firstname,
         "email" =>  $this->email,
       );
-      
-      $con->insert('user', $userValue, FALSE);
+
+      $lastID = $con->insert('user', $userValue, TRUE);
+
+
+      $this->say('Great - that is all we need, ' . $this->firstname . 'DB ID: ' . $lastID );
+
     });
   }
 
