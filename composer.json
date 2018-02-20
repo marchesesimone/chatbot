@@ -4,6 +4,7 @@
         "botman/driver-facebook": "^1.4",
         "mpociot/botman": "^1.5",
         "algolia/algoliasearch-client-php": "^1.25",
-        "botman/driver-telegram": "^1.4"
+        "doctrine/cache": "^1.6",
+        "doctrine/common": "^2.7"
     }
 }

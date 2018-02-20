@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/classes/basic.php';
 
@@ -7,6 +12,8 @@ use Mpociot\BotMan\BotMan;
 use Mpociot\BotMan\Facebook\ElementButton;
 use Mpociot\BotMan\Facebook\ButtonTemplate;
 use Mpociot\BotMan\DriverManager;
+use Mpociot\BotMan\Cache\DoctrineCache;
+use Doctrine\Common\Cache\FilesystemCache;
 
 $config = [
   'facebook_token' => Config::FACEBOOK_TOKEN,
@@ -14,8 +21,12 @@ $config = [
 ];
 
 // create an instance
-$botman = BotManFactory::create($config);
+DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
+$doctrineCacheDriver = new FilesystemCache(__DIR__);
+$botman = BotManFactory::create($config, new DoctrineCache($doctrineCacheDriver));
 
+
+// Callback Services
 $botman->verifyServices('tutorialbotfacebook-verify');
 
 // give the bot something to listen for.

@@ -28,8 +28,6 @@ class Facebook extends Conversation {
    */
   public function askFirstname() {
     $this->ask('Hello! What is your firstname?', function(Answer $answer) {
-      // Reply answer
-     $this->bot->reply("Tell me more! " . print_r($answer));
       // Save result
       $this->firstname = $answer->getText();
 
