@@ -2,11 +2,12 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 
+use Mpociot\BotMan\BotMan;
+use Mpociot\BotMan\BotManFactory;
 use Mpociot\BotMan\Conversations\InlineConversation;
 use Mpociot\BotMan\Answer;
 use Mpociot\BotMan\Question;
-use BotMan\BotMan\Messages\Outgoing\Actions\Button;
-use BotMan\BotMan\Cache\CodeIgniterCache;
+
 /**
  * Class Facebook
  */
@@ -23,11 +24,21 @@ class Facebook extends InlineConversation {
   protected $email;
 
   /**
+   * @var \Mpociot\BotMan\BotMan
+   */
+  protected $bot;
+
+  public function __construct(BotMan $bot) {
+    $this->bot = $bot;
+  }
+
+  /**
    *
    */
   public function askFirstname() {
     $this->ask('Hello! What is your firstname?', function(Answer $answer) {
-      $this->ask(print_r($answer));
+      // Reply answer
+      $this->bot->reply("Tell me more! " . print_r($answer));
       // Save result
       $this->firstname = $answer->getText();
 
