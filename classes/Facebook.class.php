@@ -24,21 +24,12 @@ class Facebook extends InlineConversation {
   protected $email;
 
   /**
-   * @var \Mpociot\BotMan\BotMan
-   */
-  protected $bot;
-
-  public function __construct(BotMan $bot) {
-    $this->bot = $bot;
-  }
-
-  /**
    *
    */
   public function askFirstname() {
     $this->ask('Hello! What is your firstname?', function(Answer $answer) {
       // Reply answer
-      $this->bot->reply("Tell me more! " . print_r($answer));
+     $this->bot->reply("Tell me more! " . print_r($answer));
       // Save result
       $this->firstname = $answer->getText();
 
