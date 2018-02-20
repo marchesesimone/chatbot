@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/classes/basic.php';
@@ -10,11 +13,11 @@ use Mpociot\BotMan\Facebook\ButtonTemplate;
 use Mpociot\BotMan\DriverManager;
 use Mpociot\BotMan\Cache\DoctrineCache;
 use Doctrine\Common\Cache\FilesystemCache;
-use ConfigApp\Config;
+
 
 $config = [
-  'facebook_token' => Config::FACEBOOK_TOKEN,
-  'facebook_app_secret' => Config::FACEBOOK_APP_SECRET,
+  'facebook_token' => 'EAAHCF500w5sBAOjpYTJOQPYlEF58oRae1gdNVPRLxWY2g4Iya8axaYWRTp0OGJDnujRuzRyTH2ZAAzRSZBZCb5gmpXOz2RDWPugZAYsiH5mZC2IiZBg1ESMzgqRxk3ZBTWTXNhUG55DeZAe0eo4M850KEIkgieIZC78JnYFFOQSHRNAZDZD',
+  'facebook_app_secret' => '8dbc5620f7bb9c4e3c6ccb7bd51f30b8',
 ];
 
 // create an instance and settings cache for conversation system
