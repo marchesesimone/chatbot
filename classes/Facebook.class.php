@@ -3,7 +3,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use Mpociot\BotMan\Conversation;
 use Mpociot\BotMan\Answer;
-use DBApp;
+use DBApp\DB;
 /**
  * Class Facebook
  */
@@ -20,18 +20,16 @@ class Facebook extends Conversation {
   protected $email;
 
   /**
-   * @var \DBApp\mysqli
-   */
-  protected $con;
-  /**
    * Facebook constructor.
    */
 
   protected $db;
 
   public function __construct() {
-    $this->db = new DBApp\DB();
-    $this->db->getConnection();
+    $con = new DB();
+    $db = $con::getInstance();
+    $db->getConnection();
+    $this->db = $db;
   }
 
   /**
