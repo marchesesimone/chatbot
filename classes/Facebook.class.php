@@ -47,7 +47,7 @@ class Facebook extends Conversation {
       // Save result
       $this->email = $answer->getText();
 
-      $con = new DB();
+      $con = new \DBApp\DB();
       //$con::getInstance();
       //$con->getConnection();
 
