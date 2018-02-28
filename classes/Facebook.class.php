@@ -1,6 +1,7 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
+require_once 'Config.class.php';
 require_once 'DB.class.php';
 use Mpociot\BotMan\Conversation;
 use Mpociot\BotMan\Answer;
