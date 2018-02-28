@@ -8,3 +8,11 @@ require_once 'classes/DB.class.php';
 
 $instance = \DBApp\DB::getInstance();
 $conn = $instance->getConnection();
+$parms = array(
+  "id"    => NULL,
+  "name"  =>  'Test name',
+  "email" =>  'test@mail.it',
+);
+
+$lastId = $instance->insert('user', $parms,TRUE);
+print $lastId;

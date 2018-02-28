@@ -1,10 +1,10 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
-
+require __DIR__ . '../classes/DB.class.php';
 use Mpociot\BotMan\Conversation;
 use Mpociot\BotMan\Answer;
-use \DBApp\DB;
+
 /**
  * Class Facebook
  */
@@ -48,7 +48,7 @@ class Facebook extends Conversation {
       // Save result
       $this->email = $answer->getText();
 
-      $con = new DB();
+      $con = new \DBApp\DB();
       //$con::getInstance();
       //$con->getConnection();
 
