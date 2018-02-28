@@ -1,8 +1,10 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
+
 require_once 'Config.class.php';
 require_once 'DB.class.php';
+
 use Mpociot\BotMan\Conversation;
 use Mpociot\BotMan\Answer;
 
@@ -59,10 +61,10 @@ class Facebook extends Conversation {
         "email" =>  $this->email,
       );
 
-      $lastID = $con->insert('user', $userValue, TRUE);
+      // Insert information in DB
+      $con->insert('user', $userValue, TRUE);
 
-
-      $this->say('Great - that is all we need, ' . $this->firstname . 'DB ID: ' . $lastID );
+      $this->say('Great - that is all we need, ' . $this->firstname );
 
     });
   }

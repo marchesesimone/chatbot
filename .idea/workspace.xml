@@ -29,10 +29,10 @@
       <file leaf-file-name="Facebook.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classes/Facebook.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+            <state relative-caret-position="714">
+              <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding>
-                <element signature="e#114#146#0#PHP" expanded="true" />
+                <element signature="e#116#148#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -285,12 +285,12 @@
       <workItem from="1518718414309" duration="743000" />
       <workItem from="1518720584702" duration="1932000" />
       <workItem from="1519026836904" duration="142000" />
-      <workItem from="1519828355004" duration="1259000" />
+      <workItem from="1519828355004" duration="1365000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11472000" />
+    <option name="totallyTimeSpent" value="11578000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1920" height="1204" extended-state="6" />
@@ -333,7 +333,7 @@
         <state relative-caret-position="36">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#114#146#0#PHP" expanded="true" />
+            <element signature="e#116#148#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -475,7 +475,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#114#146#0#PHP" expanded="true" />
+            <element signature="e#116#148#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -528,7 +528,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#114#146#0#PHP" expanded="true" />
+            <element signature="e#116#148#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -581,7 +581,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#114#146#0#PHP" expanded="true" />
+            <element signature="e#116#148#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -720,10 +720,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Facebook.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+        <state relative-caret-position="714">
+          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
-            <element signature="e#114#146#0#PHP" expanded="true" />
+            <element signature="e#116#148#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
