@@ -13,7 +13,7 @@ use Mpociot\BotMan\Facebook\ButtonTemplate;
 use Mpociot\BotMan\DriverManager;
 use Mpociot\BotMan\Cache\DoctrineCache;
 use Doctrine\Common\Cache\FilesystemCache;
-
+use Mpociot\BotMan\Middleware\ApiAi;
 
 $config = [
   'facebook_token' => 'EAAHCF500w5sBAOjpYTJOQPYlEF58oRae1gdNVPRLxWY2g4Iya8axaYWRTp0OGJDnujRuzRyTH2ZAAzRSZBZCb5gmpXOz2RDWPugZAYsiH5mZC2IiZBg1ESMzgqRxk3ZBTWTXNhUG55DeZAe0eo4M850KEIkgieIZC78JnYFFOQSHRNAZDZD',
@@ -41,5 +41,12 @@ $botman->hears('Hi', function (BotMan $bot) {
 $botman->hears('Hello', function(BotMan $bot) {
   $bot->startConversation(new Facebook());
 });
+
+// NPL
+$botman->hears('smalltalk(.*)', function(BotMan $bot) {
+  $extras = $bot->getMessage()->getExtras();
+  $apiReply = $extras['apiReply'];
+  $bot->reply($apiReply);
+})->middleware(ApiAi::create('ca13b56958af47c3baecac1b8a403681')->listenForAction());
 
 $botman->listen();

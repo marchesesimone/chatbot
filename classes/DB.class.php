@@ -80,7 +80,9 @@ class DB {
 
   }
 
-  public function delete() {
+  public function delete($table, $condition) {
+    $sql = 'DELETE FROM $table WHERE ';
+    $this->link->query($sql) or die(mysqli_error($this->link));
 
   }
 
