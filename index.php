@@ -42,7 +42,8 @@ $botman->hears('Hello', function(BotMan $bot) {
 
 $botman->hears('CONTACT_INFO_PAYLOAD', function(BotMan $bot) {
   $bot->reply('My contacts are:');
-  $bot->reply('Marchese Simone: ✉ simo.marchese@hotmail.it');
+  $bot->reply('Marchese Simone');
+  $bot->reply('✉ simo.marchese@hotmail.it');
 });
 
 $botman->hears('HELP_PAYLOAD', function(BotMan $bot) {
