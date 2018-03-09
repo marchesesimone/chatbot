@@ -46,11 +46,12 @@ $botman->fallback(function(BotMan $bot) {
 });
 
 // NPL
+/*
 $botman->hears('(.*)', function(BotMan $bot) {
   $extras = $bot->getMessage()->getExtras();
   $apiReply = $extras['apiReply'];
   $bot->reply($apiReply);
 })->middleware(ApiAi::create('ca13b56958af47c3baecac1b8a403681')->listenForAction());
 
-
+*/
 $botman->listen();
