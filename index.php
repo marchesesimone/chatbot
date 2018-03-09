@@ -42,7 +42,7 @@ $botman->hears('Hello', function(BotMan $bot) {
 });
 
 // NPL
-$botman->hears('information', function(BotMan $bot) {
+$botman->hears('(.*)', function(BotMan $bot) {
   $extras = $bot->getMessage()->getExtras();
   $apiReply = $extras['apiReply'];
   $bot->reply($apiReply);
