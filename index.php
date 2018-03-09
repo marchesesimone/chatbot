@@ -51,7 +51,8 @@ $botman->hears('HELP_PAYLOAD', function(BotMan $bot) {
 });
 
 $botman->fallback(function(BotMan $bot) {
-  $bot->reply('Sorry, I did not understand these commands. Here is a list of commands I understand: ...');
+  $bot->reply('Sorry, I did not understand these commands.');
+  $bot->reply('Here is a list of commands I understand: Hi, Hello or used Menu');
 });
 
 $botman->listen();
