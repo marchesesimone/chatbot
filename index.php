@@ -10,10 +10,9 @@ use Mpociot\BotMan\BotManFactory;
 use Mpociot\BotMan\BotMan;
 use Mpociot\BotMan\Facebook\ElementButton;
 use Mpociot\BotMan\Facebook\ButtonTemplate;
-use Mpociot\BotMan\DriverManager;
 use Mpociot\BotMan\Cache\DoctrineCache;
 use Doctrine\Common\Cache\FilesystemCache;
-use Mpociot\BotMan\Middleware\ApiAi;
+//use Mpociot\BotMan\Drivers\FacebookDriver;
 
 $config = [
   'facebook_token' => 'EAAHCF500w5sBAOjpYTJOQPYlEF58oRae1gdNVPRLxWY2g4Iya8axaYWRTp0OGJDnujRuzRyTH2ZAAzRSZBZCb5gmpXOz2RDWPugZAYsiH5mZC2IiZBg1ESMzgqRxk3ZBTWTXNhUG55DeZAe0eo4M850KEIkgieIZC78JnYFFOQSHRNAZDZD',
@@ -41,11 +40,11 @@ $botman->hears('Hello', function(BotMan $bot) {
   $bot->startConversation(new Facebook());
 });
 
-$botman->hears('Contact Me', function(BotMan $bot) {
+$botman->hears('CONTACT_INFO_PAYLOAD', function(BotMan $bot) {
   $bot->reply('Marchese Simone: simo.marchese@hotmail.it');
 });
 
-$botman->hears('Help', function(BotMan $bot) {
+$botman->hears('HELP_PAYLOAD', function(BotMan $bot) {
   $bot->reply('The commands available for this bot are: hi, hello');
 });
 
