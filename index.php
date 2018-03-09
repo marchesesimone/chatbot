@@ -41,11 +41,13 @@ $botman->hears('Hello', function(BotMan $bot) {
 });
 
 $botman->hears('CONTACT_INFO_PAYLOAD', function(BotMan $bot) {
-  $bot->reply('Marchese Simone: simo.marchese@hotmail.it');
+  $bot->reply('My contacts are:');
+  $bot->reply('Marchese Simone: ✉ simo.marchese@hotmail.it');
 });
 
 $botman->hears('HELP_PAYLOAD', function(BotMan $bot) {
-  $bot->reply('The commands available for this bot are: hi, hello');
+  $bot->reply('The commands available for this bot are: 🤔');
+  $bot->reply('hi, hello');
 });
 
 $botman->fallback(function(BotMan $bot) {
