@@ -41,16 +41,16 @@ $botman->hears('Hello', function(BotMan $bot) {
   $bot->startConversation(new Facebook());
 });
 
-$botman->fallback(function(BotMan $bot) {
-  $bot->reply('Sorry, I did not understand these commands. Here is a list of commands I understand: ...');
-});
-
 // NPL
-$botman->hears('contact', function(BotMan $bot) {
+$botman->hears('information', function(BotMan $bot) {
   $extras = $bot->getMessage()->getExtras();
   $apiReply = $extras['apiReply'];
   $bot->reply($apiReply);
 })->middleware(ApiAi::create('ca13b56958af47c3baecac1b8a403681')->listenForAction());
 
+
+$botman->fallback(function(BotMan $bot) {
+  $bot->reply('Sorry, I did not understand these commands. Here is a list of commands I understand: ...');
+});
 
 $botman->listen();
