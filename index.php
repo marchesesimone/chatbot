@@ -1,5 +1,5 @@
 <?php
-//require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/classes/basic.php';
 
 use Mpociot\BotMan\BotManFactory;
@@ -8,7 +8,6 @@ use Mpociot\BotMan\Facebook\ElementButton;
 use Mpociot\BotMan\Facebook\ButtonTemplate;
 use Mpociot\BotMan\Cache\DoctrineCache;
 use Doctrine\Common\Cache\FilesystemCache;
-//use Mpociot\BotMan\Drivers\FacebookDriver;
 
 $config = [
   'facebook_token' => 'EAAHCF500w5sBAOjpYTJOQPYlEF58oRae1gdNVPRLxWY2g4Iya8axaYWRTp0OGJDnujRuzRyTH2ZAAzRSZBZCb5gmpXOz2RDWPugZAYsiH5mZC2IiZBg1ESMzgqRxk3ZBTWTXNhUG55DeZAe0eo4M850KEIkgieIZC78JnYFFOQSHRNAZDZD',
