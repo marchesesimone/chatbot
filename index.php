@@ -1,9 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-require __DIR__ . '/vendor/autoload.php';
+//require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/classes/basic.php';
 
 use Mpociot\BotMan\BotManFactory;
@@ -35,7 +31,6 @@ $botman->hears('Hi', function (BotMan $bot) {
     ->addButton(ElementButton::create('Want a quote?')->url('https://www.wellnet.it/contatti'))
   );
 });
-
 
 $botman->hears('Hello', function(BotMan $bot) {
   $bot->startConversation(new Facebook());
