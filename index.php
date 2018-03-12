@@ -20,7 +20,7 @@ $botman = BotManFactory::create($config, new DoctrineCache($doctrineCacheDriver)
 
 
 // Callback Services
-//$botman->verifyServices('tutorialbotfacebook-verify');
+$botman->verifyServices('tutorialbotfacebook-verify');
 
 // give the bot something to listen for.
 $botman->hears('Hi', function (BotMan $bot) {
