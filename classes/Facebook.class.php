@@ -68,7 +68,7 @@ class Facebook extends Conversation {
         $this->say('Great - that is all we need, ' . $this->firstname );
 
       } else {
-        $this->say('Warning insert validate E-mail');
+        $this->say('Attention: enter a valid email address');
         $this->askEmail();
       }
 
