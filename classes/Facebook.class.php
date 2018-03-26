@@ -51,22 +51,35 @@ class Facebook extends Conversation {
       // Save result
       $this->email = $answer->getText();
 
-      $con = new \DBApp\DB();
-      //$con::getInstance();
-      //$con->getConnection();
+      $validate_email = $this->checkEmail($this->email);
+      if ($validate_email) {
+        $con = new \DBApp\DB();
+        //$con::getInstance();
+        //$con->getConnection();
 
-      $userValue = array(
-        "id"    => NULL,
-        "name"  =>  $this->firstname,
-        "email" =>  $this->email,
-      );
+        $userValue = array(
+          "id"    => NULL,
+          "name"  =>  $this->firstname,
+          "email" =>  $this->email,
+        );
 
-      // Insert information in DB
-      $con->insert('user', $userValue, TRUE);
+        // Insert information in DB
+        $con->insert('user', $userValue, TRUE);
+        $this->say('Great - that is all we need, ' . $this->firstname );
 
-      $this->say('Great - that is all we need, ' . $this->firstname );
+      } else {
+        $this->say('Warning insert validate E-mail');
+        $this->askEmail();
+      }
 
     });
+  }
+
+  public function checkEmail($email) {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      return FALSE;
+    }
+    return TRUE;
   }
 
   public function run() {
