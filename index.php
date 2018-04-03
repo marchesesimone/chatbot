@@ -45,4 +45,8 @@ $botman->fallback(function(BotMan $bot) {
   $bot->reply('Here is a list of commands I understand: Hi, Hello and Contact');
 });
 
+$botman->hears('unsubscribe_yes', function(Botman $bot) {
+  $bot->reply('Unsubscribe success!!');
+});
+
 $botman->listen();

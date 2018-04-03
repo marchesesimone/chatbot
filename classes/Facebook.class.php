@@ -90,10 +90,11 @@ class Facebook extends Conversation {
     return TRUE;
   }
 
-  public function subscriveService() {
-    $this->bot->reply(ButtonTemplate::create('Do you want to know more about BotMan?')
-      ->addButton(ElementButton::create('Tell me more')->type('postback')->payload('tellmemore'))
-      ->addButton(ElementButton::create('Show me the docs')->url('http://botman.io/'))
+  public function subscriveService($email) {
+    $this->bot->reply(ButtonTemplate::create('You want to discreet yourself to the newsletter?\n
+you are registered with the email ' . $email)
+      ->addButton(ElementButton::create('Yes')->type('postback')->payload('unsubscribe_yes'))
+      ->addButton(ElementButton::create('No')->type('postback')->payload('unsubscribe_no'))
     );
   }
 
@@ -105,7 +106,7 @@ class Facebook extends Conversation {
 
     if ($user) {
       $this->say('Welcome back ' . $user->name);
-      $this->subscriveService();
+      $this->subscriveService($user->email);
     } else {
       $this->askFirstname();
     }
