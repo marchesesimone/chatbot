@@ -55,7 +55,7 @@ class DB {
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    botman_id INT NOT NULL,
+    botman_id VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
     ) ENGINE = InnoDB") or die(mysqli_error($this->link));
   }
