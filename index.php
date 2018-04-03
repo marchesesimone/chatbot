@@ -46,6 +46,8 @@ $botman->fallback(function(BotMan $bot) {
 });
 
 $botman->hears('unsubscribe_yes', function(Botman $bot) {
+  $con = new \DBApp\DB();
+  $con->delete('user', 'botman_id', $bot->getUser()->getId());
   $bot->reply('Unsubscribe success!!');
 });
 

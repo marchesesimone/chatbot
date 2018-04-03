@@ -91,8 +91,7 @@ class Facebook extends Conversation {
   }
 
   public function subscriveService($email) {
-    $this->bot->reply(ButtonTemplate::create('You want to discreet yourself to the newsletter?\n
-you are registered with the email ' . $email)
+    $this->bot->reply(ButtonTemplate::create('You want to discreet yourself to the newsletter? You are registered with the email ' . $email)
       ->addButton(ElementButton::create('Yes')->type('postback')->payload('unsubscribe_yes'))
       ->addButton(ElementButton::create('No')->type('postback')->payload('unsubscribe_no'))
     );
