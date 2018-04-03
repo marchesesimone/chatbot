@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '/classes/basic.php';
+require __DIR__ . '/classes/Config.class.php';
 require __DIR__ . '/classes/DB.class.php';
 
 use Mpociot\BotMan\BotManFactory;
@@ -9,6 +9,7 @@ use Mpociot\BotMan\Facebook\ElementButton;
 use Mpociot\BotMan\Facebook\ButtonTemplate;
 use Mpociot\BotMan\Cache\DoctrineCache;
 use Doctrine\Common\Cache\FilesystemCache;
+use \DBApp\DB;
 
 $config = [
   'facebook_token' => 'EAAHCF500w5sBAOjpYTJOQPYlEF58oRae1gdNVPRLxWY2g4Iya8axaYWRTp0OGJDnujRuzRyTH2ZAAzRSZBZCb5gmpXOz2RDWPugZAYsiH5mZC2IiZBg1ESMzgqRxk3ZBTWTXNhUG55DeZAe0eo4M850KEIkgieIZC78JnYFFOQSHRNAZDZD',
@@ -48,7 +49,7 @@ $botman->fallback(function(BotMan $bot) {
 
 $botman->hears('unsubscribe_yes', function(Botman $bot) {
   $bot->reply('... Start unsubscribe ....');
-  $con = new DBApp\DB();
+  $con = new DB();
   $bot->reply('Start connection DB');
   $bot_id = $bot->getUser()->getId();
   $del_user = $con->delete('user', 'botman_id', $bot_id);
