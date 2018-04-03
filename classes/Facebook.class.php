@@ -60,9 +60,7 @@ class Facebook extends Conversation {
 
       $validate_email = $this->checkEmail($this->email);
       if ($validate_email) {
-
-        //$con::getInstance();
-        //$con->getConnection();
+        $con = new \DBApp\DB();
 
         $userValue = array(
           "id"    => NULL,
@@ -72,7 +70,7 @@ class Facebook extends Conversation {
         );
 
         // Insert information in DB
-        $this->con->insert('user', $userValue, TRUE);
+        $con->insert('user', $userValue, TRUE);
         $this->say('Great - that is all we need, ' . $this->firstname );
 
       } else {
