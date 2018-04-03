@@ -29,11 +29,6 @@ class Facebook extends Conversation {
 
   protected $db;
 
-  protected $con;
-
-  public function __construct() {
-    $this->con = new \DBApp\DB();
-  }
 
   /**
    * Richiedo il nome all'utente e lo salvo
@@ -89,11 +84,13 @@ class Facebook extends Conversation {
 
   public function run() {
     // This will be called immediately
+    $con = new \DBApp\DB();
     $user_id = $this->bot->getUser()->getId();
-    $user = $this->con->find('user', 'botman_id', $user_id);
+    $user = $con->find('user', 'botman_id', $user_id);
 
     if ($user) {
       $this->say('Hello ' . $user->name);
+      $this->askEmail();
     } else {
       $this->askFirstname();
     }
