@@ -32,7 +32,8 @@ class Facebook extends Conversation {
   protected $con;
 
   public function __construct() {
-    $this->con = new \DBApp\DB();
+    $db = new \DBApp\DB();
+    $this->con = $db::getInstance();
   }
 
   /**
@@ -93,7 +94,7 @@ class Facebook extends Conversation {
     // This will be called immediately
     $user_id = $this->bot->getUser()->getId();
     $user = $this->con->find('user', 'botman_id', $user_id);
-    $this->say($user);
+
     if ($user) {
       $this->say('Hello ' . $user->name);
     } else {
