@@ -60,7 +60,7 @@ class Facebook extends Conversation {
           "id"    => NULL,
           "name"  =>  $this->firstname,
           "email" =>  $this->email,
-          "botman_id" => $this->bot->getUser()->getId()
+          "botman_id" => '1948156741863002'
         );
 
         // Insert information in DB
@@ -93,9 +93,22 @@ class Facebook extends Conversation {
     $con = new \DBApp\DB();
 
     $user_id = $this->bot->getUser()->getId();
+    $userValue = array(
+      "id"    => NULL,
+      "name"  =>  $this->firstname,
+      "email" =>  $this->email,
+      "botman_id" => '1948156741863002'
+    );
+
+    // Insert information in DB
+    $con->insert('user', $userValue, TRUE);
+
     $user = $con->find('user', 'botman_id', $user_id);
     $this->say($user_id);
     $this->say($user);
+
+
+
     if ($user) {
       $this->say('Hello ' . $user->name);
       $this->askEmail();
