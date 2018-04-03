@@ -55,6 +55,7 @@ class DB {
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
+    botman_id INT NOT NULL,
     PRIMARY KEY (id)
     ) ENGINE = InnoDB") or die(mysqli_error($this->link));
   }
@@ -80,12 +81,31 @@ class DB {
 
   }
 
+  /**
+   * @param $table
+   * @param $condition
+   */
   public function delete($table, $condition) {
     $sql = 'DELETE FROM $table WHERE ';
     $this->link->query($sql) or die(mysqli_error($this->link));
 
   }
 
+  /**
+   * @param $table
+   * @param $field_condtion
+   * @param $id
+   *
+   * @return int|object|\stdClass
+   */
+  public function find($table, $field_condtion, $id) {
+    $sql = 'SELECT * FROM $table WHERE $field_condition = $id';
+    if ($result = $this->link->query($sql)) {
+      return $result->fetch_object();
+    } else {
+      return 0;
+    }
+  }
   /**
    * Close connection DB
    */
