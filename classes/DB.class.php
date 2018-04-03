@@ -88,7 +88,6 @@ class DB {
   public function delete($table, $condition) {
     $sql = 'DELETE FROM $table WHERE ';
     $this->link->query($sql) or die(mysqli_error($this->link));
-
   }
 
   /**
@@ -98,8 +97,8 @@ class DB {
    *
    * @return int|object|\stdClass
    */
-  public function find($table, $field_condtion, $id) {
-    $sql = 'SELECT * FROM $table WHERE $field_condition = $id';
+  public function find($table, $field_condition, $id) {
+    $sql = "SELECT * FROM $table WHERE '" . $field_condition ."' = '" . $id . "'; ";
     if ($result = $this->link->query($sql)) {
       return $result->fetch_object();
     } else {

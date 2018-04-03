@@ -7,7 +7,7 @@ require_once 'DB.class.php';
 
 use Mpociot\BotMan\Conversation;
 use Mpociot\BotMan\Answer;
-
+use \DBApp\DB;
 /**
  * Class Facebook
  */
@@ -29,6 +29,12 @@ class Facebook extends Conversation {
 
   protected $db;
 
+  protected $con;
+
+  public function __construct() {
+
+    $this->con = new DB();
+  }
 
   /**
    * Richiedo il nome all'utente e lo salvo
@@ -75,6 +81,12 @@ class Facebook extends Conversation {
     });
   }
 
+  /**
+   * Check format email
+   * @param $email
+   *
+   * @return bool
+   */
   public function checkEmail($email) {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       return FALSE;
@@ -84,10 +96,10 @@ class Facebook extends Conversation {
 
   public function run() {
     // This will be called immediately
-    $con = new \DBApp\DB();
     $user_id = $this->bot->getUser()->getId();
-    $user = $con->find('user', 'botman_id', $user_id);
-
+    $user = $this->con->find('user', 'botman_id', $user_id);
+    $this->say($user_id);
+    $this->say($user);
     if ($user) {
       $this->say('Hello ' . $user->name);
       $this->askEmail();
