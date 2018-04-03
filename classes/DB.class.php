@@ -87,7 +87,11 @@ class DB {
    */
   public function delete($table, $field_condition, $where_condition) {
     $sql = "DELETE FROM $table WHERE $field_condition = '$where_condition'; ";
-    $this->link->query($sql) or die(mysqli_error($this->link));
+    if ($this->link->query($sql)) {
+      return TRUE;
+    } else {
+      return FALSE;
+    }
   }
 
   /**

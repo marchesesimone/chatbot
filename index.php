@@ -8,6 +8,7 @@ use Mpociot\BotMan\Facebook\ElementButton;
 use Mpociot\BotMan\Facebook\ButtonTemplate;
 use Mpociot\BotMan\Cache\DoctrineCache;
 use Doctrine\Common\Cache\FilesystemCache;
+use \DBApp\DB;
 
 $config = [
   'facebook_token' => 'EAAHCF500w5sBAOjpYTJOQPYlEF58oRae1gdNVPRLxWY2g4Iya8axaYWRTp0OGJDnujRuzRyTH2ZAAzRSZBZCb5gmpXOz2RDWPugZAYsiH5mZC2IiZBg1ESMzgqRxk3ZBTWTXNhUG55DeZAe0eo4M850KEIkgieIZC78JnYFFOQSHRNAZDZD',
@@ -46,9 +47,18 @@ $botman->fallback(function(BotMan $bot) {
 });
 
 $botman->hears('unsubscribe_yes', function(Botman $bot) {
-  $con = new \DBApp\DB();
-  $con->delete('user', 'botman_id', $bot->getUser()->getId());
-  $bot->reply('Unsubscribe success!!');
+
+  $con = new DB();
+  $bot->reply('Start connection DB');
+  $bot_id = $bot->getUser()->getId();
+  $del_user = $con->delete('user', 'botman_id', $bot_id);
+  $bot->reply($del_user);
+  if ($del_user) {
+    $bot->reply('Unsubscribe success!!');
+  } else {
+    $bot->reply('Unsubscribe error for ' . $bot_id);
+  }
+
 });
 
 $botman->listen();
