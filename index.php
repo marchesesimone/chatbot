@@ -49,12 +49,10 @@ $botman->fallback(function(BotMan $bot) {
 });
 
 $botman->hears('unsubscribe_yes', function(Botman $bot) {
-  $bot->reply('... Start unsubscribe ....');
+
   $con = new DB();
-  $bot->reply('Start connection DB');
   $bot_id = $bot->getUser()->getId();
   $del_user = $con->delete('user', 'botman_id', $bot_id);
-  $bot->reply($del_user);
   if ($del_user) {
     $bot->reply('Unsubscribe success!!');
   } else {
