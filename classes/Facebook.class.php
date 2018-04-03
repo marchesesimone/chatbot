@@ -37,9 +37,7 @@ class Facebook extends Conversation {
    */
   public function askFirstname() {
     $this->ask('Hello! What is your firstname?', function(Answer $answer) {
-      // Save result
       $this->firstname = $answer->getText();
-
       $this->say('Nice to meet you ' . $this->firstname);
       $this->askEmail();
     });
@@ -51,7 +49,6 @@ class Facebook extends Conversation {
   public function askEmail() {
     $userValue = array();
     $this->ask('One more thing - what is your email?', function(Answer $answer) {
-      // Save result
       $this->email = $answer->getText();
 
       $validate_email = $this->checkEmail($this->email);
