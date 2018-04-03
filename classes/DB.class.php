@@ -98,7 +98,7 @@ class DB {
    * @return int|object|\stdClass
    */
   public function find($table, $field_condition, $id) {
-    $sql = "SELECT * FROM $table WHERE '$field_condition' = '$id'; ";
+    $sql = "SELECT * FROM $table WHERE $field_condition = '$id'; ";
     $result = $this->link->query($sql) or die(mysqli_error($this->link));
     if ($result->num_rows) {
       return $result->fetch_object();
