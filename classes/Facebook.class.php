@@ -7,6 +7,8 @@ require_once 'DB.class.php';
 
 use Mpociot\BotMan\Conversation;
 use Mpociot\BotMan\Answer;
+use Mpociot\BotMan\Facebook\ButtonTemplate;
+use Mpociot\BotMan\Facebook\ElementButton;
 
 /**
  * Class Facebook
@@ -88,6 +90,13 @@ class Facebook extends Conversation {
     return TRUE;
   }
 
+  public function subscriveService() {
+    $this->bot->reply(ButtonTemplate::create('Do you want to know more about BotMan?')
+      ->addButton(ElementButton::create('Tell me more')->type('postback')->payload('tellmemore'))
+      ->addButton(ElementButton::create('Show me the docs')->url('http://botman.io/'))
+    );
+  }
+
   public function run() {
     // This will be called immediately
     $con = new \DBApp\DB();
@@ -95,8 +104,8 @@ class Facebook extends Conversation {
     $user = $con->find('user', 'botman_id', $user_id);
 
     if ($user) {
-      $this->say('Hello ' . $user->name);
-      $this->say('Unsubscrive service with? ' . $user->email);
+      $this->say('Welcome back ' . $user->name);
+      $this->subscriveService();
     } else {
       $this->askFirstname();
     }
