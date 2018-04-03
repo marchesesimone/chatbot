@@ -99,7 +99,8 @@ class DB {
    */
   public function find($table, $field_condition, $id) {
     $sql = "SELECT * FROM $table WHERE '$field_condition' = '$id'; ";
-    if ($result = $this->link->query($sql)) {
+    $result = $this->link->query($sql) or die(mysqli_error($this->link));
+    if ($result) {
       return 1;
     } else {
       return 0;
