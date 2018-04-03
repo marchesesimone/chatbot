@@ -98,9 +98,9 @@ class DB {
    * @return int|object|\stdClass
    */
   public function find($table, $field_condition, $id) {
-    $sql = "SELECT * FROM $table WHERE '" . $field_condition ."' = '" . $id . "'; ";
+    $sql = "SELECT * FROM $table WHERE '$field_condition' = '$id'; ";
     if ($result = $this->link->query($sql)) {
-      return $result->fetch_object();
+      return 1;
     } else {
       return 0;
     }
