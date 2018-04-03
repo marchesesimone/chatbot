@@ -32,8 +32,7 @@ class Facebook extends Conversation {
   protected $con;
 
   public function __construct() {
-    $db = new \DBApp\DB();
-    $this->con = $db::getInstance();
+    $this->con = new \DBApp\DB();
   }
 
   /**
