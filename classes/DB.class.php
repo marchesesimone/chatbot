@@ -100,11 +100,12 @@ class DB {
   public function find($table, $field_condition, $id) {
     $sql = "SELECT * FROM $table WHERE '$field_condition' = '$id'; ";
     $result = $this->link->query($sql) or die(mysqli_error($this->link));
-    if ($result) {
+   /* if ($result->num_rows) {
       return 1;
     } else {
       return 0;
-    }
+    }**/
+    return $result->num_rows;
   }
   /**
    * Close connection DB
