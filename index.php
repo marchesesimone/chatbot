@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/classes/Facebook.class.php';
 require __DIR__ . '/classes/Config.class.php';
 require __DIR__ . '/classes/DB.class.php';
 
