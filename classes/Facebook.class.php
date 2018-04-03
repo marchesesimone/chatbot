@@ -92,6 +92,7 @@ class Facebook extends Conversation {
   public function run() {
     // This will be called immediately
     $user_id = $this->bot->getUser()->getId();
+    $this->say($user_id);
     $user = $this->con->find('user', 'botman_id', $user_id);
     if ($user) {
       $this->say('Hello ' . $user->name);
