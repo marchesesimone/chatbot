@@ -60,4 +60,8 @@ $botman->hears('unsubscribe_yes', function(Botman $bot) {
   }
 });
 
+$botman->hears('unsubscribe_no', function(Botman $bot) {
+  $bot->reply('Great!! 👍');
+});
+
 $botman->listen();
