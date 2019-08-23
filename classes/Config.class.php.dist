@@ -1,0 +1,12 @@
+<?php
+namespace ConfigApp;
+
+class Config {
+  const FACEBOOK_TOKEN = '';
+  const FACEBOOK_APP_SECRET = '';
+
+  const DB_USER = '';
+  const DB_PASS = '';
+  const DB_HOST = ';
+  const DB_NAME = '';
+}
