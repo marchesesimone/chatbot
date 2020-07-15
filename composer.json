@@ -1,7 +1,11 @@
 {
+    "name": "chatbot/marchesesimone",
+    "type": "project",
+    "license": "MIT",
+    "description": "Personal chatbot connected to facebook",
     "require": {
-        "botman/botman": "^2.1",
-        "botman/driver-facebook": "^1.4",
+        "botman/botman": "2.6",
+        "botman/driver-facebook": "1.10",
         "mpociot/botman": "^1.5",
         "algolia/algoliasearch-client-php": "^1.25",
         "doctrine/cache": "^1.6",

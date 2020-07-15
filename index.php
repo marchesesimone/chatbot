@@ -1,8 +1,6 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/classes/basic.php';
-require __DIR__ . '/classes/Config.class.php';
-require __DIR__ . '/classes/DB.class.php';
 
 use Mpociot\BotMan\BotManFactory;
 use Mpociot\BotMan\BotMan;
